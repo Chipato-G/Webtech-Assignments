@@ -87,7 +87,7 @@ Examples of development stages include:
 
 **Griffin Chipato**
 
-Software Engineering / Computer Information Systems Student
+Computer Information Systems Student
 
 ## Repository
 
