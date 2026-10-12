@@ -4,79 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Griffin Chipato - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">   
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            colour: black;
-            line-height: 1.6;
-        }
-        label {
-            display: block;
-            margin-top: 9px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 9px
-        }
-        button {
-            background-color: blue;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkblue;
-        }
-
-    </style>
+    <!-- Tailwind (utility classes on the header/nav and Contact form) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Own CSS: base styles, typography, About, Skills grid, footer, media queries -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <img src="images.jfif" alt="Africa University Logo" class="au-logo">
-        <h1>Griffin Chipato</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+<body class="page">
+    <header class="flex flex-col items-center gap-4 bg-slate-900 px-4 py-6 text-white md:flex-row md:justify-between md:px-8">
+        <div class="flex items-center gap-3">
+            <img src="images.jfif" alt="Africa University Logo" class="au-logo">
+            <h1 class="text-2xl font-bold md:text-3xl">Griffin Chipato</h1>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul class="flex flex-wrap items-center justify-center gap-2 md:gap-6">
+                <li><a href="#about" class="rounded px-3 py-2 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-white">About</a></li>
+                <li><a href="#skills" class="rounded px-3 py-2 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-white">Skills</a></li>
+                <li><a href="#contact" class="rounded px-3 py-2 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-white">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, Im Griffin . <p>
-            <p> I'm an undergraduate student at Africa University, majoring in Computer Information Systems and I am passionate about web development and programming.</p>
-    </section>
+    <main>
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="section-title">About Me</h2>
+            <p>Hi, I'm Griffin.</p>
+            <p>I'm an undergraduate student at Africa University, majoring in Computer Information Systems, and I am passionate about web development and programming.</p>
+        </section>
 
-    <section id="Skills">
-        <h2>    Skills</h2>
-        <div class="project">
-            <p>HTML, CSS, JavaScript, Python, C# </p>
-        </div>
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading" class="section-title">Skills</h2>
+            <ul class="skills-grid">
+                <li class="skill-card">HTML</li>
+                <li class="skill-card">CSS</li>
+                <li class="skill-card">JavaScript</li>
+                <li class="skill-card">Python</li>
+                <li class="skill-card">C#</li>
+            </ul>
+        </section>
 
-    </section>
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" class="section-title">Contact Me</h2>
+            <form action="submit_form.php" method="POST" class="flex max-w-2xl flex-col gap-4">
+                <div class="flex flex-col gap-4 md:flex-row">
+                    <div class="flex flex-1 flex-col gap-1">
+                        <label for="name" class="text-sm font-semibold">Name:</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full rounded border border-slate-300 p-3 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    </div>
+                    <div class="flex flex-1 flex-col gap-1">
+                        <label for="email" class="text-sm font-semibold">Email:</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full rounded border border-slate-300 p-3 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    </div>
+                </div>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="submit_form.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+                <div class="flex flex-col gap-1">
+                    <label for="message" class="text-sm font-semibold">Message:</label>
+                    <textarea id="message" name="message" rows="5" required
+                              class="w-full rounded border border-slate-300 p-3 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300"></textarea>
+                </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+                <button type="submit"
+                        class="w-full rounded bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 sm:w-auto sm:self-start">
+                    Send Message
+                </button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Griffin Chipato. All rights reserved.</p>
     </footer>
+</body>
+</html>
