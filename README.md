@@ -93,3 +93,20 @@ Computer Information Systems Student
 
 This project is hosted on GitHub as part of the Web Technologies coursework.
 
+# Griffin Chipato - Portfolio
+
+Profile / mini-portfolio page for Web Technologies (CIS2103), Africa University.
+
+## Responsive Notes
+
+**Breakpoints tested** (browser device toolbar): mobile (~375px), tablet (~768px) and desktop (~1280px). There is no horizontal scrolling, overlapping text or broken navigation at any of them.
+
+**Flexbox vs. Grid**
+- **Flexbox** is used for one-row or one-column layouts: the header and nav, the Contact form fields, and the footer.
+- **Grid** is used for the Skills section, because the cards sit in rows and columns that reflow with `repeat()`, `fr`, `minmax()` and `gap`.
+
+**Tailwind vs. my own CSS**
+- **Tailwind utilities:** the header/nav and the Contact form, including the responsive variants `md:` and `sm:`.
+- **My own CSS (`styles.css`):** the base styles, typography, About and Skills sections, the footer, and the custom `min-width` media queries (768px and 1280px).
+
+The CSS is written mobile-first and layered up to larger screens with `min-width` media queries.
